@@ -1,11 +1,8 @@
-import React, {
-    Component
-} from 'react';
-import './App.css';
+import React from 'react';
 import Header from './components/header';
 import Shape from './components/shape';
 
-class App extends Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +11,8 @@ class App extends Component {
             radius: 50,
             x: 100,
             y: 100,
-            time: 48,
+            startTime: 0,
+            time: 0,
             display: 'none'
         };
         this.clickHandler = this.clickHandler.bind(this);
@@ -22,8 +20,11 @@ class App extends Component {
     }
 
     clickHandler(e) {
+      let endTime = new Date().getTime();
+      let totalTime = (endTime - this.state.startTime) / 1000;
       e.preventDefault();
       console.log("Clicked!");
+      this.setState({display: 'none', time: totalTime});
       setTimeout(this.makeShapeAppear, Math.random() * 500);
     }
 
@@ -41,9 +42,10 @@ class App extends Component {
             color: color,
             radius: radius,
             size: size,
-            x: x > 85 ? 85 : x,
-            y: y > 22 && y <= 80 ? y : y > 80 ? 80 : y + 22,
-            display: 'block'
+            x: x > 79 ? 79 : x, // shape should not be off screen on x axis
+            y: y > 22 && y <= 80 ? y : y > 73 ? 73 : y + 22, // same for y axis
+            display: 'block',
+            startTime: new Date().getTime()
         });
     }
 

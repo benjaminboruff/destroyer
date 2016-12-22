@@ -11,7 +11,8 @@ function Shape(props) {
     left: props.x,
     top: props.y,
     display: props.display,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    position: 'absolute'
   };
 
   return (
