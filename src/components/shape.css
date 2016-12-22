@@ -1,5 +1,5 @@
 /* Shape styles */
 .shape {
   /*display: none;*/
-  position: relative;
+  position: absolute;
 }

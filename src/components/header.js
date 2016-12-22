@@ -6,7 +6,7 @@ function Header(props) {
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <h2>Destroy All Shapes!</h2>
-      <h3>Score: {props.score}</h3>
+      <h3>Time: {props.time}</h3>
     </div>
   );
 }
