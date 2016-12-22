@@ -1,6 +1,7 @@
 {
   "name": "react_game",
   "version": "0.1.0",
+  "homepage": "http://benjaminboruff.github.io/react_game",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.4"
