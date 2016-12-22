@@ -1,11 +1,12 @@
+// @flow
 import React from 'react';
 import './shape.css';
 
-function Shape(props) {
+function Shape(props: Object) {
 
   const styles = {
     backgroundColor:props.color,
-     width: props.size,
+    width: props.size,
     height: props.size,
     borderRadius: props.radius,
     left: props.x,

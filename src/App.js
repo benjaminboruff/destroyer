@@ -1,10 +1,25 @@
+// @flow
 import React from 'react';
 import Header from './components/header';
 import Shape from './components/shape';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
+
+    // type declarations for state
+    // that are stripped-out by Flow
+    state: {
+      color: string,
+      size: number,
+      radius: number,
+      x: number,
+      y: number,
+      startTime: number,
+      time: number,
+      display: string
+    };
+
+    constructor() {
+        super();
         this.state = {
             color: 'blue',
             size: 100,
@@ -15,15 +30,17 @@ class App extends React.Component {
             time: 0,
             display: 'none'
         };
+        // $FlowFixMe this is because of the stupid covariant/invariant crap
         this.clickHandler = this.clickHandler.bind(this);
+        // $FlowFixMe
         this.makeShapeAppear = this.makeShapeAppear.bind(this);
     }
 
-    clickHandler(e) {
+    clickHandler(e: Event) {
+      e.preventDefault();
       let endTime = new Date().getTime();
       let totalTime = (endTime - this.state.startTime) / 1000;
-      e.preventDefault();
-      console.log("Clicked!");
+      //console.log("Clicked!");
       this.setState({display: 'none', time: totalTime});
       setTimeout(this.makeShapeAppear, Math.random() * 500);
     }
