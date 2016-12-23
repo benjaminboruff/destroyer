@@ -17,7 +17,7 @@ function Shape(props: Object) {
   };
 
   return (
-    <div className="shape" style={styles} onClick={props.onClick} ></div>
+    <div className={props.fade} style={styles} onClick={props.onClick} key="shape" ></div>
   );
 }
 

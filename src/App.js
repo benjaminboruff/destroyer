@@ -15,7 +15,8 @@ class App extends React.Component {
       y: number,
       startTime: number,
       time: number,
-      display: string
+      display: string,
+      fade: string
     };
 
     constructor() {
@@ -28,7 +29,8 @@ class App extends React.Component {
             y: 100,
             startTime: 0,
             time: 0,
-            display: 'none'
+            display: 'none',
+            fade: 'shape transition in'
         };
         // $FlowFixMe this is because of the stupid covariant/invariant crap
         this.clickHandler = this.clickHandler.bind(this);
@@ -41,8 +43,8 @@ class App extends React.Component {
       let endTime = new Date().getTime();
       let totalTime = (endTime - this.state.startTime) / 1000;
       //console.log("Clicked!");
-      this.setState({display: 'none', time: totalTime});
-      setTimeout(this.makeShapeAppear, Math.random() * 500);
+      this.setState({time: totalTime, fade: 'shape transition out'});
+      setTimeout(this.makeShapeAppear, Math.random() * 300 + 50);
     }
 
     makeShapeAppear() {
@@ -62,7 +64,8 @@ class App extends React.Component {
             x: x > 79 ? 79 : x, // shape should not be off screen on x axis
             y: y > 22 && y <= 80 ? y : y > 73 ? 73 : y + 22, // same for y axis
             display: 'block',
-            startTime: new Date().getTime()
+            startTime: new Date().getTime(),
+            fade: 'shape transition in'
         });
     }
 
@@ -75,6 +78,7 @@ class App extends React.Component {
           <div className="App" >
             <Header time={ this.state.time.toString() + ' seconds' } />
             <Shape
+              fade={ this.state.fade }
               color={ this.state.color }
               size={ this.state.size.toString() + 'px' }
               radius={ this.state.radius.toString() + '%' }
