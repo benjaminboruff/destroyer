@@ -1,7 +1,7 @@
 {
   "name": "react_game",
   "version": "0.1.0",
-  "homepage": "http://benjaminboruff.github.io/react_game",
+  "homepage": "http://benjaminboruff.github.io/destroyer",
   "private": true,
   "devDependencies": {
     "enzyme": "^2.7.0",
