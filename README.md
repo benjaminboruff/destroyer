@@ -29,7 +29,7 @@ To make a production build
 ```
 yarn build
 ```
-To deploy the build to your github account as a gh-pages project, you must first edit the package.json file and change the "homepage" property to your own; e.g. {"homepage": "http://your-gh-username.github.io/destroyer}". Of course, you don't have to call it destroyer :smile:
+To deploy the build to your github account as a gh-pages project, you must first edit the package.json file and change the "homepage" property to your own; e.g. {"homepage": "http://your-gh-username.github.io/destroyer"}. Of course, you don't have to call it destroyer :smile:
 ```
 yarn deploy
 ```
