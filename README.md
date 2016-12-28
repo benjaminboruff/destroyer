@@ -25,7 +25,7 @@ To run the jest/enzyme tests
 ```
 yarn tests
 ```
-To make a production build to deploy to your github account as a gh-pages project, you must first edit the package.json file and change the "homepage" property to your own; e.g. {"homepage": "http://your-gh-username.github.io/destroyer"}. If you just want a generic build created in the build/ directory, then leave the "homepages" proerty blank. And, of course, you don't have to call it destroyer :smile:
+To make a production build to deploy to your github account as a gh-pages project, you must first edit the package.json file and change the "homepage" property to your own; e.g. {"homepage": "http://your-gh-username.github.io/destroyer"}. If you just want a generic build created in the build/ directory, then remove the "homepages" property entirely. And, of course, you don't have to call it destroyer :smile:
 ```
 yarn build
 ```
