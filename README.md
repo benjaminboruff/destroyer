@@ -12,7 +12,7 @@ git clone git@github.com:benjaminboruff/destroyer.git
 ```
 Then cd into the cloned repo and run yarn to install the dependencies.
 ```
-cd destroyer
+cd destroyer/
 yarn
 ```
 
